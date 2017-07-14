@@ -1,0 +1,23 @@
+<ol class="breadcrumb visible-sm visible-xs">
+    <li class="active">Wi-Fi</li>
+</ol>
+<div ng-show="!full">
+    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+    <span class="sr-only">Carregando...</span>
+</div>
+<div class="table-responsive" ng-show="full">
+    <table class="table table-condensed">
+        <tr>
+            <th>&nbsp;</th>
+            <th>Nome</th>
+            <th>Mac</th>
+            <th>IP</th>
+        </tr>
+        <tr ng-repeat="(key, value) in full" ng-click="device(value)">
+            <td><i class="fa fa-2x fa-globe" ng-class="{'green': value.online, 'red': !value.online}"></i></td>
+            <td>{{value.name}}</td>
+            <td>{{value.mac}}</td>
+            <td>{{value.ip}}</td>
+        </tr>
+    </table>
+</div>

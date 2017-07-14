@@ -1,0 +1,51 @@
+<ol class="breadcrumb visible-sm visible-xs">
+    <li class="active">Home</li>
+</ol>
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <h5>Temperatura Interna: {{tempInterna}}</h5>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <h5>Umidade Interna: {{umidInterna}}</h5>
+    </div>
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzSuite()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Suíte</button>
+    </div>
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzEscritorio()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Escritório</button>
+    </div>
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzSala()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Sala</button>
+    </div>
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzCozinha()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Cozinha</button>
+    </div>
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzEscadaTeto()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Escada Teto</button>
+    </div>
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzEscadaParede()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Escada Parede</button>
+    </div>
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzFrente()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Frente</button>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-danger btn-sm btn-block" ng-click="releOff()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Rele Off</button>
+    </div>
+    <div class="col-md-3 col-sm-12 padding-line">
+        <button type="button" class="btn btn-danger btn-sm btn-block" ng-click="releOn()">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Rele On</button>
+    </div>
+
+</div>

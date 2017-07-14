@@ -1,0 +1,57 @@
+<ol class="breadcrumb visible-sm visible-xs">
+    <li class="active">Tower</li>
+</ol>
+<div class="row">
+    <div class="col-md-4 col-sm-12">
+        <small><em>Processador</em></small>
+        <uib-progressbar class="progress-striped" value="procValue" max="procMax" type="{{procType}}">{{procPercent}}</uib-progressbar>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <small><em>RAM</em></small>
+        <uib-progressbar class="progress-striped" value="ramValue" max="ramMax" type="{{ramType}}">{{ramPercent}}</uib-progressbar>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <small><em>Disco ({{discPart}})</em></small>
+        <uib-progressbar class="progress-striped" value="discValue" max="discMax" type="{{discType}}">{{discPercent}}</uib-progressbar>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <small><em>Uptime</em></small>
+        <p>{{uptime}}</p>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <small><em>Temperatura</em></small>
+        <p>{{temp}}</p>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <small><em>Voltagem</em></small>
+        <p>{{volts}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-default btn-xs" ng-click="processos()">
+            <i class="fa fa-refresh"></i> Processos
+        </button>
+    </div>
+</div>
+<br />
+<div class="table-responsive" ng-show="top">
+    <table class="table table-condensed">
+        <tr>
+            <th>#</th>
+            <th>PID</th>
+            <th>%CPU</th>
+            <th>%MEM</th>
+            <th>TIME+</th>
+            <th>COMMAND</th>
+        </tr>
+        <tr ng-repeat="(key, value) in top">
+            <td>{{key}}</td>
+            <td>{{value['PID']}}</td>
+            <td>{{value['%CPU']}}</td>
+            <td>{{value['%MEM']}}</td>
+            <td>{{value['TIME+']}}</td>
+            <td>{{value['COMMAND']}}</td>
+        </tr>
+    </table>
+</div>
