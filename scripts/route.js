@@ -16,7 +16,7 @@ angular.module('zuhause')
                             templateUrl: 'views/wifi.html',
                             controller: 'WifiController'
                         })
-                        .when('/device/:mac', {
+                        .when('/wifi/device', {
                             templateUrl: 'views/device.html',
                             controller: 'DeviceController'
                         })

@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/edufolly/zuhause/app/views/tower.html</file>
             <file>file:/Users/edufolly/zuhause/app/views/wifi.html</file>
-            <file>file:/Users/edufolly/zuhause/app/views/device.html</file>
-            <file>file:/Users/edufolly/zuhause/app/scripts/route.js</file>
-            <file>file:/Users/edufolly/zuhause/app/scripts/controllers/tower.js</file>
             <file>file:/Users/edufolly/zuhause/app/scripts/controllers/wifi.js</file>
-            <file>file:/Users/edufolly/zuhause/app/index.html</file>
+            <file>file:/Users/edufolly/zuhause/app/views/device.html</file>
+            <file>file:/Users/edufolly/zuhause/app/scripts/controllers/device.js</file>
         </group>
     </open-files>
 </project-private>
