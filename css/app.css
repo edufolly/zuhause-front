@@ -1,9 +1,13 @@
+.background {
+    background-color: #fafafa
+}
+
 .green {
-    color: #3c763d;
+    color: #3c763d !important;
 }
 
 .red {
-    color: #a94442;
+    color: #a94442 !important;
 }
 
 .blue {
@@ -22,10 +26,26 @@
     color: #666666;
 }
 
+.white {
+    color: #ffffff;
+}
+
 .full-width {
     width: 100%;
 }
 
 .text-left {
     text-align: left;
+}
+
+.back-blue {
+    background-color: #3F51B5;
+}
+
+.online {
+    color: green !important;
+}
+
+.offline {
+    color: red !important;
 }

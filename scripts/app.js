@@ -8,8 +8,6 @@ angular.module('zuhause', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    // 'ngTouch',
-    'ui.bootstrap',
     'ngMaterial'
 ]);
 

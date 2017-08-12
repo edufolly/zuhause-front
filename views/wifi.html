@@ -1,44 +1,36 @@
-<ol class="breadcrumb visible-sm visible-xs">
-    <li class="active">Wi-Fi</li>
-</ol>
-<div ng-show="!full">
-    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw dark-gray"></i>
-    <span class="sr-only">Carregando...</span>
+<div ng-show="!full" layout="row" layout-sm="column" layout-align="space-around">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
 </div>
-<div class="table-responsive" ng-show="full">
-    <table class="table table-condensed">
-        <tr>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>Nome</th>
-            <th>Mac</th>
-            <th>IP</th>
-        </tr>
-        <tr ng-repeat="(key, value) in full">
-            <td>
-                <span class="fa-stack fa-lg dark-gray" ng-click="device(value)">
-                    <i class="fa fa-plus-circle fa-stack-2x"></i>
-                </span>
-            </td>
-            <td>
-                <span class="fa-stack fa-lg" ng-class="{'green': value.online, 'red': !value.online}">
-                    <i class="fa fa-globe fa-stack-2x"></i>
-                </span>
-            </td>
-            <td>
-                <span class="fa-stack fa-lg gray" ng-hide="(value.idRule > -1)">
-                    <i class="fa fa-ban fa-stack-2x"></i>
-                    <i class="fa fa-pause fa-stack-1x"></i>
-                </span>
-                <span class="fa-stack fa-lg" ng-show="(value.idRule > -1)">
-                    <i class="fa fa-pause-circle fa-stack-2x orange" ng-hide="value.paused" ng-click="pause(value)"></i>
-                    <i class="fa fa-play-circle fa-stack-2x green" ng-show="value.paused" ng-click="play(value)"></i>
-                </span>
-            </td>
-            <td>{{value.name}}</td>
-            <td>{{value.mac}}</td>
-            <td>{{value.ip}}</td>
-        </tr>
-    </table>
-</div>
+
+<md-grid-list
+    md-cols-xs="1" md-cols-sm="1" md-cols-md="4" md-cols-gt-md="4"
+    md-row-height="14em" md-gutter="10px">
+
+    <md-grid-tile ng-repeat="(key, value) in full">
+        <md-card class="full-width" md-theme="default">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">
+                        <md-icon md-svg-icon="img/icons/ic_place_24px.svg" ng-class="{'online': value.online, 'offline': !value.online}"></md-icon>
+                        {{value.name}}</span>
+                    <span class="md-subhead">{{value.mac}}</span>
+                    <span class="md-subhead">{{value.ip}}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media"></div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-fab md-mini md-primary" aria-label="Settings" ng-show="(value.idRule > -1)">
+                    <md-icon md-svg-icon="img/icons/ic_pause_24px.svg"
+                             ng-hide="value.paused" ng-click="pause(value)"></md-icon>
+                    <md-icon md-svg-icon="img/icons/ic_play_arrow_24px.svg"
+                             ng-show="value.paused" ng-click="play(value)"></md-icon>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" aria-label="Add" ng-click="device(value)">
+                    <md-icon md-svg-icon="img/icons/ic_more_horiz_24px.svg"></md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </md-grid-tile>
+</md-grid-list>

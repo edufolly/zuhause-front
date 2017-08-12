@@ -1,57 +1,62 @@
-<ol class="breadcrumb visible-sm visible-xs">
-    <li class="active">Tower</li>
-</ol>
-<div class="row">
-    <div class="col-md-4 col-sm-12">
-        <small><em>Processador</em></small>
-        <uib-progressbar class="progress-striped" value="procValue" max="procMax" type="{{procType}}">{{procPercent}}</uib-progressbar>
-    </div>
-    <div class="col-md-4 col-sm-12">
-        <small><em>RAM</em></small>
-        <uib-progressbar class="progress-striped" value="ramValue" max="ramMax" type="{{ramType}}">{{ramPercent}}</uib-progressbar>
-    </div>
-    <div class="col-md-4 col-sm-12">
-        <small><em>Disco ({{discPart}})</em></small>
-        <uib-progressbar class="progress-striped" value="discValue" max="discMax" type="{{discType}}">{{discPercent}}</uib-progressbar>
-    </div>
-    <div class="col-md-4 col-sm-12">
-        <small><em>Uptime</em></small>
-        <p>{{uptime}}</p>
-    </div>
-    <div class="col-md-4 col-sm-12">
-        <small><em>Temperatura</em></small>
-        <p>{{temp}}</p>
-    </div>
-    <div class="col-md-4 col-sm-12">
-        <small><em>Voltagem</em></small>
-        <p>{{volts}}</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <button type="button" class="btn btn-default btn-xs" ng-click="processos()">
-            <i class="fa fa-refresh"></i> Processos
-        </button>
-    </div>
-</div>
-<br />
-<div class="table-responsive" ng-show="top">
-    <table class="table table-condensed">
-        <tr>
-            <th>#</th>
-            <th>PID</th>
-            <th>%CPU</th>
-            <th>%MEM</th>
-            <th>TIME+</th>
-            <th>COMMAND</th>
-        </tr>
-        <tr ng-repeat="(key, value) in top">
-            <td>{{key}}</td>
-            <td>{{value['PID']}}</td>
-            <td>{{value['%CPU']}}</td>
-            <td>{{value['%MEM']}}</td>
-            <td>{{value['TIME+']}}</td>
-            <td>{{value['COMMAND']}}</td>
-        </tr>
-    </table>
-</div>
+<md-grid-list
+    md-cols-xs="1" md-cols-sm="1" md-cols-md="3" md-cols-gt-md="3"
+    md-row-height="6em" md-gutter="10px">
+
+    <md-grid-tile class="back-blue white">
+        <div layout="column" class="full-width md-padding">
+            <h4 class="md-title">
+                <md-icon md-svg-src="img/icons/ic_developer_board_24px.svg" class="white"></md-icon>
+                <small class="white">Processador:</small> {{procPercent}}
+            </h4>
+            <md-progress-linear md-mode="determinate" ng-class="procType" value="{{procValue}}"></md-progress-linear>
+        </div>
+    </md-grid-tile>
+
+    <md-grid-tile class="back-blue white">
+        <div layout="column" class="full-width md-padding">
+            <h4 class="md-title">
+                <md-icon md-svg-src="img/icons/ic_memory_24px.svg" class="white"></md-icon>
+                <small class="white">RAM:</small> {{ramPercent}}
+            </h4>
+            <md-progress-linear md-mode="determinate" ng-class="ramType" value="{{ramValue}}"></md-progress-linear>
+        </div>
+    </md-grid-tile>
+
+    <md-grid-tile class="back-blue white">
+        <div layout="column" class="full-width md-padding">
+            <h4 class="md-title">
+                <md-icon md-svg-src="img/icons/ic_sd_storage_24px.svg" class="white"></md-icon>
+                <small class="white">Disco {{discPart}} :</small> {{discPercent}}
+            </h4>
+            <md-progress-linear md-mode="determinate" ng-class="discType" value="{{discValue}}"></md-progress-linear>
+        </div>
+    </md-grid-tile>
+
+    <md-grid-tile class="back-blue white">
+        <div layout="column" class="full-width md-padding">
+            <h4 class="md-title">
+                <md-icon md-svg-src="img/icons/ic_schedule_24px.svg" class="white"></md-icon>
+                <small class="white">Uptime:</small> {{uptime}}
+            </h4>
+        </div>
+    </md-grid-tile>
+
+    <md-grid-tile class="back-blue white">
+        <div layout="column" class="full-width md-padding">
+            <h4 class="md-title">
+                <md-icon md-svg-src="img/icons/ic_whatshot_24px.svg" class="white"></md-icon>
+                <small class="white">Temperatura:</small> {{temp}}
+            </h4>
+        </div>
+    </md-grid-tile>
+
+    <md-grid-tile class="back-blue white">
+        <div layout="column" class="full-width md-padding">
+            <h4 class="md-title">
+                <md-icon md-svg-src="img/icons/ic_flash_on_24px.svg" class="white"></md-icon>
+                <small class="white">Voltagem:</small> {{volts}}
+            </h4>
+        </div>
+    </md-grid-tile>
+
+</md-grid-list>

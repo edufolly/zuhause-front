@@ -10,14 +10,10 @@
 
         <title>Zuhause</title>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous" />
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css" crossorigin="anonymous" />
-        <link rel="stylesheet" href="css/font-awesome.min.css" crossorigin="anonymous" />
         <link rel="stylesheet" href="css/angular-material.min.css" crossorigin="anonymous" />
         <link rel="stylesheet" href="css/app.css" crossorigin="anonymous" />
 
         <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.min.js"></script>
         <script src="js/angular-animate.min.js"></script>
         <script src="js/angular-aria.min.js"></script>
@@ -26,8 +22,6 @@
         <script src="js/angular-resource.min.js"></script>
         <script src="js/angular-route.min.js"></script>
         <script src="js/angular-sanitize.min.js"></script>
-        <script src="js/angular-touch.min.js"></script>
-        <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
         <script src="js/angular-material.min.js"></script>
         <script src="js/angular-locale_pt-br.js"></script>
 
@@ -41,10 +35,9 @@
         <script src="scripts/controllers/device.js"></script>
     </head>
 
-    <body ng-controller="IndexController">
+    <body ng-controller="IndexController" class="background">
 
-    <md-sidenav class="md-sidenav-left" md-component-id="left"
-                md-whiteframe="4">
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
         <md-toolbar class="md-hue-2">
             <div class="md-toolbar-tools">
                 <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
@@ -95,7 +88,7 @@
         </div>
     </md-toolbar>
     <br />
-    <md-content ng-view>
+    <md-content flex layout-padding ng-view>
     </md-content>
 </body>
 </html>

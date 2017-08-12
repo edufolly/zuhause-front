@@ -5,28 +5,27 @@ angular.module('zuhause')
             function ($scope, $http) {
 
                 var getType = function (percent) {
-                    if (percent < 25) {
-                        return 'success';
-                    } else if (percent < 50) {
-                        return 'info';
-                    } else if (percent < 75) {
-                        return 'warning';
-                    }
-                    return 'danger';
+//                    if (percent < 25) {
+//                        return 'md-primary';
+//                    } else if (percent < 50) {
+//                        return 'md-primary';
+//                    } else if (percent < 75) {
+//                        return 'md-warn';
+//                    }
+                    return 'md-warn';
                 };
 
                 $http.get("/api/raspi/disk").then(function (response) {
                     angular.forEach(response.data, function (value) {
-                        if (value['Montado em'] === '/') {
-                            var usado = parseInt(value['Usado']);
-                            var total = usado + parseInt(value['Disponível']);
+                        if (value['Mounted on'] === '/') {
+                            var usado = parseInt(value['Used']);
+                            var total = usado + parseInt(value['Available']);
                             var percent = Math.ceil(usado / total * 100);
 
-                            $scope.discPart = value['Montado em'];
+                            $scope.discPart = value['Mounted on'];
                             $scope.discType = getType(percent);
-                            $scope.discValue = usado;
-                            $scope.discMax = total;
-                            $scope.discPercent = value['Uso%'];
+                            $scope.discValue = percent;
+                            $scope.discPercent = percent + "%";
                         }
                     });
                 });
@@ -38,8 +37,7 @@ angular.module('zuhause')
                     var percent = Math.ceil(usado / total * 100);
 
                     $scope.ramType = getType(percent);
-                    $scope.ramValue = usado;
-                    $scope.ramMax = total;
+                    $scope.ramValue = percent;
                     $scope.ramPercent = percent + "%";
                 });
 
@@ -47,12 +45,10 @@ angular.module('zuhause')
                     angular.forEach(response.data, function (value) {
                         if (value['CPU'] === 'all') {
                             var usado = 100.0 - parseFloat(value['%idle'].replace(new RegExp(',', 'g'), '.'));
-                            var total = 100;
                             var percent = Math.ceil(usado);
 
                             $scope.procType = getType(percent);
                             $scope.procValue = percent;
-                            $scope.procMax = total;
                             $scope.procPercent = percent + '%';
                         }
                     });
