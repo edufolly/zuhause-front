@@ -1,51 +1,59 @@
-<ol class="breadcrumb visible-sm visible-xs">
-    <li class="active">Home</li>
-</ol>
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <h5>Temperatura Interna: {{tempInterna}}</h5>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <h5>Umidade Interna: {{umidInterna}}</h5>
-    </div>
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzSuite()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Suíte</button>
-    </div>
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzEscritorio()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Escritório</button>
-    </div>
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzSala()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Sala</button>
-    </div>
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzCozinha()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Cozinha</button>
-    </div>
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzEscadaTeto()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Escada Teto</button>
-    </div>
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzEscadaParede()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Escada Parede</button>
-    </div>
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="luzFrente()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Frente</button>
-    </div>
+<md-grid-list
+    md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+    md-row-height="34px" md-gutter="20px">
 
-</div>
-<div class="row">
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-danger btn-sm btn-block" ng-click="releOff()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Rele Off</button>
-    </div>
-    <div class="col-md-3 col-sm-12 padding-line">
-        <button type="button" class="btn btn-danger btn-sm btn-block" ng-click="releOn()">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Rele On</button>
-    </div>
+    <md-grid-tile>
+        <md-button class="md-primary md-raised full-width" ng-click="luzSuite()">
+            <md-icon md-svg-src="img/icons/ic_lightbulb_outline_24px.svg"></md-icon>
+            Suíte</md-button>
+    </md-grid-tile>
 
-</div>
+    <md-grid-tile>
+        <md-button class="md-primary md-raised full-width" ng-click="luzEscritorio()">
+            <md-icon md-svg-src="img/icons/ic_lightbulb_outline_24px.svg"></md-icon>
+            Escritório</md-button>
+    </md-grid-tile>
+
+    <md-grid-tile>
+        <md-button class="md-primary md-raised full-width" ng-click="luzSala()">
+            <md-icon md-svg-src="img/icons/ic_lightbulb_outline_24px.svg"></md-icon>
+            Sala</md-button>
+    </md-grid-tile>
+
+    <md-grid-tile>
+        <md-button class="md-primary md-raised full-width" ng-click="luzCozinha()">
+            <md-icon md-svg-src="img/icons/ic_lightbulb_outline_24px.svg"></md-icon>
+            Cozinha</md-button>
+    </md-grid-tile>
+
+    <md-grid-tile>
+        <md-button class="md-primary md-raised full-width" ng-click="luzEscadaTeto()">
+            <md-icon md-svg-src="img/icons/ic_lightbulb_outline_24px.svg"></md-icon>
+            Escada Teto</md-button>
+    </md-grid-tile>
+
+    <md-grid-tile>
+        <md-button class="md-primary md-raised full-width" ng-click="luzEscadaParede()">
+            <md-icon md-svg-src="img/icons/ic_lightbulb_outline_24px.svg"></md-icon>
+            Escada Parede</md-button>
+    </md-grid-tile>
+
+    <md-grid-tile>
+        <md-button class="md-primary md-raised full-width" ng-click="luzFrente()">
+            <md-icon md-svg-src="img/icons/ic_lightbulb_outline_24px.svg"></md-icon>
+            Frente</md-button>
+    </md-grid-tile>
+
+    <md-grid-tile>
+        <md-button class="md-warn md-raised full-width" ng-click="releOff()">
+            <md-icon md-svg-src="img/icons/ic_warning_24px.svg"></md-icon>
+            Rele Off</md-button>
+    </md-grid-tile>
+
+    <md-grid-tile>
+        <md-button class="md-warn md-raised full-width" ng-click="releOn()">
+            <md-icon md-svg-src="img/icons/ic_warning_24px.svg"></md-icon>
+            Rele On</md-button>
+    </md-grid-tile>
+
+</md-grid-list>

@@ -2,13 +2,15 @@
 
 angular.module('zuhause', [
     'ngAnimate',
+    'ngAria',
     'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'ui.bootstrap'
+    // 'ngTouch',
+    'ui.bootstrap',
+    'ngMaterial'
 ]);
 
 angular.module('zuhause')
