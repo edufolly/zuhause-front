@@ -20,6 +20,10 @@ angular.module('zuhause')
                             templateUrl: 'views/device.html',
                             controller: 'DeviceController'
                         })
+                        .when('/temperature', {
+                            templateUrl: 'views/temperature.html',
+                            controller: 'TemperatureController'
+                        })
                         .otherwise({redirectTo: '/home'});
             }]);
 

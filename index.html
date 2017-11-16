@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="css/app.css" crossorigin="anonymous" />
 
         <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/chart.bundle.min.js"></script>
         <script src="js/angular.min.js"></script>
         <script src="js/angular-animate.min.js"></script>
         <script src="js/angular-aria.min.js"></script>
@@ -33,6 +34,7 @@
         <script src="scripts/controllers/tower.js"></script>
         <script src="scripts/controllers/wifi.js"></script>
         <script src="scripts/controllers/device.js"></script>
+        <script src="scripts/controllers/temperature.js"></script>
     </head>
 
     <body ng-controller="IndexController" class="background">
@@ -70,6 +72,12 @@
                         Wi-Fi</md-button>
                 </md-grid-tile>
 
+                <md-grid-tile>
+                    <md-button href="/#/temperature" class="full-width text-left" aria-label="temperature" ng-click="toggleLeft()">
+                        <md-icon md-svg-src="img/icons/ic_whatshot_24px.svg"></md-icon>
+                        Temperatura</md-button>
+                </md-grid-tile>
+
             </md-grid-list>
         </md-content>
     </md-sidenav>
@@ -82,7 +90,7 @@
 
             <h2 flex md-truncate>Zuhause</h2>
 
-            <md-button class="md-primary md-raised" aria-label="More" ng-click="null">
+            <md-button class="md-primary md-raised" aria-label="More" href="/#/temperature">
                 {{tempInterna}}
             </md-button>
         </div>
